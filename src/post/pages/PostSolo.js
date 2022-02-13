@@ -49,7 +49,7 @@ const PostSolo = () => {
     return (
         <>
             <Box m={2} p={2}>
-                <Typography sx={{ fontWeight: 'bold' }} variant="h4" component="h4" mb={8} mt={4} color="blue">POST</Typography>
+                <Typography sx={{ fontWeight: 'bold' }} align="center" variant="h4" component="h4" mb={8} mt={4} color="blue">POST</Typography>
                 <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }}>
                     <Typography variant="h6" color="blue" mb={2}>
                         {postMostrar?.title}

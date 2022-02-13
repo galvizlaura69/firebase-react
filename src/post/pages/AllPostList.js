@@ -12,11 +12,11 @@ import CardPost from "../components/CardPost";
 import FormCreatePost from "../components/FormCreatePost";
 import { styleModal } from "../styles/modal";
 
-const AllPostList = ({user}) => {
+const AllPostList = ({ user }) => {
 
   const [listaPost, setListaPost] = useState([]);
   const [open, setOpen] = useState(false);
- 
+
 
   const getList = async () => {
     const posts = await getPostListAll();
@@ -37,14 +37,16 @@ const AllPostList = ({user}) => {
   return (
     <>
       <Box m={2} p={2}>
-        <Typography sx={{ fontWeight: 'bold'}} variant="h4" component="h4" mb={8} mt={4} color="blue">ÚLTIMOS 20 POST</Typography>
-        <Button variant="contained"  onClick={handleOpen}>CREAR NUEVO</Button>
+        <Typography sx={{ fontWeight: 'bold' }} align="center" variant="h4" component="h4" mb={8} mt={4} color="blue">ÚLTIMOS 20 POST</Typography>
+        <Box mr={5} sx={{ textAlign: 'right' }}>
+          <Button variant="contained" onClick={handleOpen}>CREAR NUEVO</Button>
+        </Box>
         <Grid container spacing={2}>
           {listaPost.map((post) => (
             <Grid item xs={3} key={post.id}>
-                <Box m={2} p={2}>
-                    <CardPost post={post} />
-                </Box>
+              <Box m={2} p={2}>
+                <CardPost post={post} />
+              </Box>
             </Grid>
           ))}
         </Grid>
@@ -56,8 +58,8 @@ const AllPostList = ({user}) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={styleModal}>
-          <FormCreatePost user={user} handleClose={handleClose}/>
-          <Button  onClick={handleClose}>Cerrar</Button>
+          <FormCreatePost user={user} handleClose={handleClose} />
+          <Button onClick={handleClose}>Cerrar</Button>
         </Box>
       </Modal>
     </>

@@ -36,7 +36,7 @@ const ListaPost = ({ user }) => {
   return (
     <>
       <Box m={2} p={2}>
-      <Typography sx={{ fontWeight: 'bold'}} variant="h4" component="h4" mb={8} mt={4} color="blue">MIS POST</Typography>
+      <Typography sx={{ fontWeight: 'bold'}} align="center" variant="h4" component="h4" mb={8} mt={4} color="blue">MIS POST</Typography>
         <Grid container spacing={2}>
           {listaPost.map((post) => (
               <Grid item xs={3} key={post.id}>
