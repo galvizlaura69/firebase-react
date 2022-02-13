@@ -12,6 +12,8 @@ import { styleModal } from "../styles/modal";
 
 const ListaPost = ({ user }) => {
 
+  
+
   const [listaPost, setListaPost] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
