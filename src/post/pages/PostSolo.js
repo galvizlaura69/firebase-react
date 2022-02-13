@@ -13,7 +13,7 @@ import swal from "sweetalert";
 
 const PostSolo = () => {
 
-    let {id} = useParams();
+    let { id } = useParams();
 
     const [postMostrar, setPostMostrar] = useState();
     const [open, setOpen] = useState(false);
@@ -30,17 +30,17 @@ const PostSolo = () => {
         postOne();
     }, []);
 
-    const handleFavorito = async({id, title, body}) => {
+    const handleFavorito = async ({ id, title, body }) => {
         console.log("Favorito", id, title, body);
-        try{
-            await updateOrCreateFavorite(id, title, body);  
+        try {
+            await updateOrCreateFavorite(id, title, body);
             swal({
                 title: "Exitoso",
                 text: "Se ha añadio a favoritos exitosamente",
                 icon: "success"
-              });
+            });
         }
-        catch(e){
+        catch (e) {
             console.log(e);
         }
     };
@@ -48,9 +48,10 @@ const PostSolo = () => {
 
     return (
         <>
-            <div>
-                <Card variant="outlined" sx={{minHeight: 200, p:2, maxWidth:500 }}>
-                    <Typography variant="h4">
+           <Box m={2} p={2}>
+                <Typography variant="h4" component="h4" mb={8} mt={4} color="blue">POST</Typography>
+                <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }}>
+                    <Typography variant="h6" color="blue" mb={2}>
                         {postMostrar?.title}
                     </Typography>
                     <Typography component="div" sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -61,14 +62,14 @@ const PostSolo = () => {
                         <Stack spacing={2} alignItems="center" direction="row">
                             <Button
                                 mr={2}
-                                onClick={()=>{handleFavorito(postMostrar)}}
+                                onClick={() => { handleFavorito(postMostrar) }}
                                 variant="outlined">
-                               Añadir a favoritos  <FavoriteIcon />
+                                Añadir a favoritos  <FavoriteIcon />
                             </Button>
                         </Stack>
                     </Box>
                 </Card>
-            </div>
+            </Box>
 
         </>
     );

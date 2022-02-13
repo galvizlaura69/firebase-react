@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from '@mui/material/Button';
+import { Button, TextField, Typography } from "@mui/material";
 import createPost from '../hooks/createPost';
 import swal from 'sweetalert';
 
 
 
 
-export default function FormCreatePost({user, handleClose}) {
+export default function FormCreatePost({ user, handleClose }) {
 
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
@@ -40,39 +40,38 @@ export default function FormCreatePost({user, handleClose}) {
 
 
   return (
-    <div>
+    <Box mt={2} mb={2}>
+      <Typography mb={2}>CREAR POST</Typography>
       <form>
-        <Box mt={3} mb={4}>
-          <label>
-            Title
-          </label>
-          <input
-            type="text"
-            valvue={title}
-            onChange={(e) => (setTitle(e.target.value))}
-            requerid
-          >
-          </input>
-        </Box>
-        <Box mt={3} mb={4}>
-          <label>
-            Body
-          </label>
-          <input
-            type="text"
-            valvue={body}
-            onChange={(e) => (setBody(e.target.value))}
-            requerid
-          >
-          </input>
+        <Box mb={2}>
+          <TextField
+            label="titulo"
+            variant="outlined"
+            sx={{ mb: 2 }}
+            placeholder="titulo"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+          <TextField
+            label="body"
+            variant="outlined"
+            sx={{ mb: 2 }}
+            placeholder="body"
+            value={body}
+            onChange={(e) => {
+              setBody(e.target.value);
+            }}
+          />
         </Box>
         <Box>
-          <Button
+          <Button variant="contained"
             onClick={(e) => { handleGuardar() }}
           >
             Guardar</Button>
         </Box>
       </form>
-    </div >
+    </Box>
   );
 }

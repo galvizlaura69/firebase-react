@@ -4,11 +4,12 @@ a{
     font-size: 20px;
     text-decoration:none ;
     border: solid 1px blue;
+    color: blue;
 }
 
 .menu:hover{
     border: solid 1px blue;
-    background-color: rgb(96, 96, 224);
+    background-color: rgba(0, 0, 255, 0.822);
     color: white;
 }
 
