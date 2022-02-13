@@ -37,7 +37,7 @@ const AllPostList = ({user}) => {
   return (
     <>
       <Box m={2} p={2}>
-        <Typography  variant="h4" component="h4" mb={8} mt={4} color="blue">ÚLTIMOS 20 POST</Typography>
+        <Typography sx={{ fontWeight: 'bold'}} variant="h4" component="h4" mb={8} mt={4} color="blue">ÚLTIMOS 20 POST</Typography>
         <Button variant="contained"  onClick={handleOpen}>CREAR NUEVO</Button>
         <Grid container spacing={2}>
           {listaPost.map((post) => (

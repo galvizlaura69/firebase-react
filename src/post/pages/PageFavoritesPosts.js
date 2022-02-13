@@ -1,4 +1,4 @@
-import { Button, Card, Typography } from "@mui/material";
+import { Button, Card, Typography, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import deleteFavorite from "../hooks/firebaseDeleteFavorite";
@@ -40,29 +40,32 @@ const PageFavoritesPosts = (props) => {
     return (
         <>
             <Box m={2} p={2}>
-                <Typography variant="h4" component="h4" mb={8} mt={4} color="blue">FAVORITOS</Typography>
-                {listaPost.map(post => (
-                    <div>
-                        <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }} key={post.idPost}>
-                            <CardContent>
-                                <Typography variant="h6" color="blue" mb={2}>{post.title}  </Typography>
-                                <Typography variant="p">{post.body} </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                    onClick={() => { removeFavorite(post.idPost) }}>
-                                    Quitar de favoritos <FavoriteBorderIcon />
-                                </Button>
-                                <Button variant="outlined" sx={{ ml: 2 }} onClick={() => { goToPost(post.idPost) }}>
-                                    <VisibilityIcon />
-                                </Button>
-                            </CardActions>
-
-                        </Card>
-                    </div>
-                ))}
+                <Typography sx={{ fontWeight: 'bold' }} variant="h4" component="h4" mb={8} mt={4} color="blue">FAVORITOS</Typography>
+                <Grid container spacing={2}>
+                    {listaPost.map(post => (
+                        <Grid item xs={3} key={post.id}>
+                            <div>
+                                <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }} key={post.idPost}>
+                                    <CardContent>
+                                        <Typography variant="h6" color="blue" mb={2}>{post.title}  </Typography>
+                                        <Typography variant="p">{post.body} </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button
+                                            variant="contained"
+                                            color="secondary"
+                                            onClick={() => { removeFavorite(post.idPost) }}>
+                                            Quitar de favoritos <FavoriteBorderIcon />
+                                        </Button>
+                                        <Button variant="outlined" sx={{ ml: 2 }} onClick={() => { goToPost(post.idPost) }}>
+                                            <VisibilityIcon />
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </div>
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </>
     );

@@ -48,8 +48,8 @@ const PostSolo = () => {
 
     return (
         <>
-           <Box m={2} p={2}>
-                <Typography variant="h4" component="h4" mb={8} mt={4} color="blue">POST</Typography>
+            <Box m={2} p={2}>
+                <Typography sx={{ fontWeight: 'bold' }} variant="h4" component="h4" mb={8} mt={4} color="blue">POST</Typography>
                 <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }}>
                     <Typography variant="h6" color="blue" mb={2}>
                         {postMostrar?.title}
@@ -63,7 +63,8 @@ const PostSolo = () => {
                             <Button
                                 mr={2}
                                 onClick={() => { handleFavorito(postMostrar) }}
-                                variant="outlined">
+                                variant="contained"
+                                color="secondary">
                                 Añadir a favoritos  <FavoriteIcon />
                             </Button>
                         </Stack>
