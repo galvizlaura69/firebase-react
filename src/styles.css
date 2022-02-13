@@ -1,14 +1,16 @@
 a{
-    padding: 4px;
+    padding: 10px;
     margin-right: 20px;
     font-size: 20px;
     text-decoration:none ;
     border: solid 1px blue;
+    background-color: rgba(12, 12, 196, 0.63);
+    color: white;
 }
 
 .menu:hover{
     border: solid 1px blue;
-    background-color: rgb(96, 96, 224);
+    background-color: rgba(0, 0, 255, 0.822);
     color: white;
 }
 

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
@@ -11,14 +10,13 @@ function Menu() {
       };
 
     return (
-        <Box mt={6}>
+        <Box p={4}  sx={{ display: 'flex' }} sx={{ textAlign: 'right' }} >
             <Link className="menu" to="/">Home </Link>
             <Link className="menu" to="/posts">Mis Posts</Link>
             <Link  className="menu" to="/favorites">Favoritos</Link>
-            <Button variant="contained" onClick={cerrarSesion}>Cerrar Sesión
-            
-            </Button>       
+            <Button variant="contained" onClick={cerrarSesion}>Cerrar Sesión</Button>       
         </Box>
+        
     )
 }
 export default Menu;

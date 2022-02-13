@@ -73,8 +73,8 @@ export default function CardPost({ post, handleOpen, setPostelected }) {
   return (
     <Card variant="outlined" sx={{ minHeight: 200 }}>
       <CardContent>
-        <Typography variant="h6"> {title} {id} </Typography>
-        <Typography variant="p" >{body} </Typography>
+        <Typography variant="h6" color="blue" mb={2}> {title} {id} </Typography>
+        <Typography variant="p" mt={4} >{body} </Typography>
       </CardContent>
       <CardActions>
         <Button  onClick={() => {goToPost(id);}}>
