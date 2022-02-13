@@ -44,8 +44,8 @@ const PageFavoritesPosts = (props) => {
                 <Grid container spacing={2}>
                     {listaPost.map(post => (
                         <Grid item xs={3} key={post.id}>
-                            <div>
-                                <Card variant="outlined" sx={{ minHeight: 200, p: 2, maxWidth: 500 }} key={post.idPost}>
+                            <Box m={2} p={2}>
+                                <Card variant="outlined" sx={{ minHeight: 200, maxWidth:300}} key={post.idPost}>
                                     <CardContent>
                                         <Typography variant="h6" color="blue" mb={2}>{post.title}  </Typography>
                                         <Typography variant="p">{post.body} </Typography>
@@ -62,7 +62,7 @@ const PageFavoritesPosts = (props) => {
                                         </Button>
                                     </CardActions>
                                 </Card>
-                            </div>
+                            </Box>
                         </Grid>
                     ))}
                 </Grid>
